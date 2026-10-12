@@ -1,392 +1,444 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conmax Contabilidade Empresarial | Fortaleza - CE</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
-    <style>
-        :root {
-            --primary-color: #0d2c54; /* Azul Marinho Corporativo */
-            --accent-color: #0077b6;  /* Azul Destaque */
-            --light-bg: #f8f9fa;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conmax Contabilidade | Organizações Contábeis em Fortaleza - CE</title>
+  <meta name="description" content="Conmax Contabilidade Empresarial: há 20 anos cuidando da contabilidade de empresas em Fortaleza-CE. Abertura de empresas, fiscal, folha de pagamento e consultoria.">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-        }
+  <!-- Bootstrap 5 + Ícones + Fonte -->
+  <link href="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css)" rel="stylesheet">
+  <link href="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css)" rel="stylesheet">
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
 
-        .bg-primary-custom {
-            background-color: var(--primary-color) !important;
-        }
+  <style>
+    :root{
+      --azul:#0b2a4a;
+      --azul-claro:#13467a;
+      --dourado:#d4a017;
+      --cinza:#f4f6f9;
+    }
+    *{font-family:'Poppins',sans-serif;}
+    html{scroll-behavior:smooth;}
+    body{color:#333;}
 
-        .text-accent {
-            color: var(--accent-color) !important;
-        }
+    /* Topbar */
+    .topbar{background:var(--azul);color:#cfd8e3;font-size:.85rem;}
+    .topbar a{color:#cfd8e3;text-decoration:none;}
+    .topbar a:hover{color:var(--dourado);}
 
-        .hero-section {
-            background: linear-gradient(rgba(13, 44, 84, 0.85), rgba(13, 44, 84, 0.85)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            color: white;
-            padding: 100px 0;
-        }
+    /* Navbar */
+    .navbar{box-shadow:0 2px 12px rgba(0,0,0,.08);}
+    .navbar-brand{font-weight:700;color:var(--azul)!important;font-size:1.5rem;}
+    .navbar-brand span{color:var(--dourado);}
+    .nav-link{font-weight:500;color:var(--azul)!important;}
+    .nav-link:hover{color:var(--dourado)!important;}
 
-        .card-service {
-            border: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 10px;
-        }
+    /* Botões */
+    .btn-dourado{background:var(--dourado);color:#fff;border:none;font-weight:600;}
+    .btn-dourado:hover{background:#b8890f;color:#fff;}
+    .btn-outline-claro{border:2px solid #fff;color:#fff;font-weight:600;}
+    .btn-outline-claro:hover{background:#fff;color:var(--azul);}
 
-        .card-service:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
+    /* Hero */
+    .hero{
+      background:linear-gradient(rgba(11,42,74,.88),rgba(11,42,74,.88)),
+      url('[images.unsplash.com](https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600)') center/cover;
+      color:#fff;padding:130px 0 110px;
+    }
+    .hero h1{font-weight:700;font-size:2.8rem;}
+    .hero h1 span{color:var(--dourado);}
+    .badge-anos{background:rgba(212,160,23,.15);border:1px solid var(--dourado);color:var(--dourado);
+      padding:6px 16px;border-radius:30px;font-size:.9rem;display:inline-block;}
 
-        .icon-box {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
+    /* Títulos */
+    .section{padding:90px 0;}
+    .titulo small{color:var(--dourado);font-weight:600;letter-spacing:2px;text-transform:uppercase;}
+    .titulo h2{color:var(--azul);font-weight:700;}
+    .linha{width:70px;height:4px;background:var(--dourado);margin:12px auto 0;border-radius:2px;}
 
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-            font-weight: bold;
-        }
+    /* Números */
+    .numeros{background:var(--dourado);color:#fff;padding:50px 0;}
+    .numeros h3{font-weight:700;font-size:2.4rem;margin:0;}
 
-        .btn-whatsapp:hover {
-            background-color: #1da851;
-            color: white;
-        }
+    /* Cards */
+    .card-servico{border:none;border-radius:14px;padding:35px 25px;transition:.3s;height:100%;
+      box-shadow:0 5px 20px rgba(0,0,0,.06);}
+    .card-servico:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(11,42,74,.18);}
+    .icone{width:70px;height:70px;border-radius:50%;background:var(--azul);color:var(--dourado);
+      display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:20px;}
+    .card-servico h5{color:var(--azul);font-weight:600;}
 
-        .badge-crc {
-            background-color: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 6px 16px;
-            border-radius: 20px;
-            display: inline-block;
-        }
-    </style>
+    .bg-cinza{background:var(--cinza);}
+    .check li{list-style:none;margin-bottom:10px;}
+    .check li i{color:var(--dourado);margin-right:8px;}
+
+    /* Frase destaque */
+    .frase{background:var(--azul);color:#fff;padding:70px 0;}
+    .frase blockquote{font-size:1.6rem;font-style:italic;font-weight:300;}
+    .frase i.bi-quote{font-size:3rem;color:var(--dourado);}
+
+    /* Sócios */
+    .socio{background:#fff;border-radius:14px;padding:35px;text-align:center;
+      box-shadow:0 5px 20px rgba(0,0,0,.06);height:100%;}
+    .socio .avatar{width:110px;height:110px;border-radius:50%;background:linear-gradient(135deg,var(--azul),var(--azul-claro));
+      color:var(--dourado);font-size:2.5rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+
+    /* Tabela cadastro */
+    .tabela-dados th{color:var(--azul);width:45%;}
+    .selo{background:#e8f5ec;color:#198754;padding:4px 12px;border-radius:20px;font-weight:600;font-size:.85rem;}
+
+    /* Etapas */
+    .etapa .num{width:55px;height:55px;border-radius:50%;background:var(--dourado);color:#fff;
+      font-weight:700;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;}
+
+    /* Contato */
+    .info-contato i{font-size:1.5rem;color:var(--dourado);}
+    .info-contato a{color:#333;text-decoration:none;}
+    .info-contato a:hover{color:var(--dourado);}
+    .accordion-button:not(.collapsed){background:var(--azul);color:#fff;}
+
+    /* Footer */
+    footer{background:#071c33;color:#a9b6c6;}
+    footer h5{color:#fff;}
+    footer a{color:#a9b6c6;text-decoration:none;}
+    footer a:hover{color:var(--dourado);}
+
+    /* WhatsApp flutuante */
+    .whatsapp{position:fixed;bottom:25px;right:25px;width:60px;height:60px;background:#25d366;color:#fff;
+      border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;z-index:999;
+      box-shadow:0 5px 15px rgba(0,0,0,.3);animation:pulse 2s infinite;}
+    .whatsapp:hover{color:#fff;}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6);}70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+    @media(max-width:768px){.hero h1{font-size:2rem;}.hero{padding:90px 0 70px;}}
+  </style>
 </head>
 <body>
 
-    <!-- Header / Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <i class="bi bi-calculator-fill fs-3 me-2 text-info"></i>
-                <div>
-                    <span class="fw-bold d-block lh-1">CONMAX</span>
-                    <small style="font-size: 0.65rem;" class="text-uppercase text-light">Contabilidade Empresarial</small>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#transparencia">Transparência</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-                        <a class="btn btn-whatsapp btn-sm px-3" href="https://wa.me/5585999851217" target="_blank">
-                            <i class="bi bi-whatsapp me-1"></i> (85) 99985-1217
-                        </a>
-                    </li>
-                </ul>
-            </div>
+<!-- TOPBAR -->
+<div class="topbar py-2 d-none d-md-block">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <i class="bi bi-geo-alt-fill me-1"></i> Rua Monsenhor Bruno, 1153 - Cj. 610 - Aldeota, Fortaleza/CE
+    </div>
+    <div>
+      <a href="tel:+558533888000" class="me-3"><i class="bi bi-telephone-fill me-1"></i>(85) 3388-8000</a>
+      <a href="mailto:josevenancio@tmaenergiasolar.com"><i class="bi bi-envelope-fill me-1"></i>josevenancio@tmaenergiasolar.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="#inicio"><i class="bi bi-bar-chart-line-fill"></i> Con<span>max</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="#socios">Sócios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#dados">Dados</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">Dúvidas</a></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-dourado px-4" href="#contato">Fale Conosco</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <span class="badge-anos mb-3"><i class="bi bi-award-fill"></i> Desde 2006 • 20 anos de tradição</span>
+        <h1 class="mb-4">Contabilidade que <span>organiza</span>, protege e faz sua empresa <span>crescer</span>.</h1>
+        <p class="lead mb-4">Na Conmax Contabilidade, cuidamos dos números para que você cuide do seu negócio. Atendimento próximo, responsável e atualizado com a legislação.</p>
+        <a href="[wa.me](https://wa.me/5585999851217)" target="_blank" class="btn btn-dourado btn-lg me-2 mb-2"><i class="bi bi-whatsapp"></i> Falar no WhatsApp</a>
+        <a href="#servicos" class="btn btn-outline-claro btn-lg mb-2">Nossos Serviços</a>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block text-center">
+        <i class="bi bi-calculator" style="font-size:14rem;color:rgba(212,160,23,.85);"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<section class="numeros">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-3"><h3>20+</h3><p class="mb-0">Anos de mercado</p></div>
+      <div class="col-6 col-md-3"><h3><i class="bi bi-patch-check-fill"></i></h3><p class="mb-0">Registro CRC-CE ativo</p></div>
+      <div class="col-6 col-md-3"><h3>100%</h3><p class="mb-0">Compromisso com prazos</p></div>
+      <div class="col-6 col-md-3"><h3><i class="bi bi-geo-fill"></i></h3><p class="mb-0">Sede em Fortaleza/CE</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="section" id="sobre">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900)" class="img-fluid rounded-4 shadow" alt="Equipe Conmax Contabilidade">
+      </div>
+      <div class="col-lg-6">
+        <div class="titulo mb-4">
+          <small>Quem somos</small>
+          <h2>Conmax Contabilidade Empresarial</h2>
         </div>
-    </nav>
-
-    <!-- Hero / Apresentação Principal -->
-    <section id="inicio" class="hero-section text-center">
-        <div class="container">
-            <div class="badge-crc mb-3">
-                <i class="bi bi-patch-check-fill text-info me-1"></i> Registro CRC: CE-000643/O
-            </div>
-            <h1 class="display-4 fw-bold mb-3">Soluções Contábeis de Confiança para a sua Empresa</h1>
-            <p class="lead mb-4 mx-auto" style="max-width: 700px;">
-                Há 20 anos oferecendo assessoria financeira, fiscal e trabalhista com excelência e segurança para empresas em Fortaleza e região.
-            </p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="#contato" class="btn btn-info btn-lg text-white fw-bold">Fale Conosco</a>
-                <a href="https://wa.me/5585999851217" target="_blank" class="btn btn-whatsapp btn-lg">
-                    <i class="bi bi-whatsapp me-2"></i> Atendimento via WhatsApp
-                </a>
-            </div>
+        <p>Fundada em <strong>11 de agosto de 2006</strong>, a Conmax Contabilidade Empresarial S/S LTDA é uma organização contábil sediada no bairro Aldeota, em Fortaleza, Ceará. Há duas décadas, apoiamos empresários na gestão contábil, fiscal e trabalhista com seriedade e transparência.</p>
+        <p>Registrada no Conselho Regional de Contabilidade sob o nº <strong>CRC CE-000643/O</strong>, nossa missão é transformar obrigações em informação estratégica para a tomada de decisão.</p>
+        <ul class="check ps-0 mt-4">
+          <li><i class="bi bi-check-circle-fill"></i> Atendimento personalizado e humanizado</li>
+          <li><i class="bi bi-check-circle-fill"></i> Equipe atualizada com as mudanças da legislação</li>
+          <li><i class="bi bi-check-circle-fill"></i> Segurança e sigilo das suas informações</li>
+          <li><i class="bi bi-check-circle-fill"></i> Foco em micro, pequenas e médias empresas</li>
+        </ul>
+        <div class="row mt-4 g-3">
+          <div class="col-sm-4"><div class="p-3 bg-cinza rounded-3 text-center h-100"><i class="bi bi-bullseye fs-2" style="color:var(--dourado)"></i><h6 class="mt-2 fw-bold">Missão</h6><small>Simplificar a gestão do seu negócio.</small></div></div>
+          <div class="col-sm-4"><div class="p-3 bg-cinza rounded-3 text-center h-100"><i class="bi bi-eye fs-2" style="color:var(--dourado)"></i><h6 class="mt-2 fw-bold">Visão</h6><small>Ser referência contábil no Ceará.</small></div></div>
+          <div class="col-sm-4"><div class="p-3 bg-cinza rounded-3 text-center h-100"><i class="bi bi-gem fs-2" style="color:var(--dourado)"></i><h6 class="mt-2 fw-bold">Valores</h6><small>Ética, confiança e compromisso.</small></div></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Sobre a Empresa -->
-    <section id="sobre" class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h6 class="text-accent fw-bold text-uppercase">Nossa História</h6>
-                    <h2 class="fw-bold mb-3">Conmax Contabilidade Empresarial</h2>
-                    <p class="text-muted">
-                        Fundada em agosto de 2006, a <strong>Conmax Contabilidade</strong> construiu uma trajetória sólida no segmento de assessoria e consultoria empresarial. Especializada na gestão contábil para micro e pequenas empresas optantes pelo Simples Nacional e outros regimes tributários.
-                    </p>
-                    <p class="text-muted">
-                        Nossa missão é simplificar os processos burocráticos e contábeis, permitindo que nossos clientes fiquem focados exclusivamente no crescimento dos seus negócios.
-                    </p>
-                    
-                    <div class="row g-3 mt-2">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center p-3 border rounded bg-light">
-                                <i class="bi bi-award fs-2 text-accent me-3"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-0">20+ Anos</h6>
-                                    <small class="text-muted">De experiência de mercado</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center p-3 border rounded bg-light">
-                                <i class="bi bi-shield-check fs-2 text-accent me-3"></i>
-                                <div>
-                                    <h6 class="fw-bold mb-0">Regularidade</h6>
-                                    <small class="text-muted">CRC Ativo e Certificado</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!-- SERVIÇOS -->
+<section class="section bg-cinza" id="servicos">
+  <div class="container">
+    <div class="titulo text-center mb-5">
+      <small>O que fazemos</small>
+      <h2>Nossos Serviços</h2>
+      <div class="linha"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-building-add"></i></div><h5>Abertura de Empresas</h5><p>Constituição, alteração e baixa de empresas com agilidade, incluindo registro na Junta Comercial, Receita, Estado e Prefeitura.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-journal-text"></i></div><h5>Contabilidade Empresarial</h5><p>Escrituração contábil, balancetes, balanço patrimonial e DRE para manter sua empresa organizada e em dia.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-receipt"></i></div><h5>Área Fiscal e Tributária</h5><p>Apuração de impostos, obrigações acessórias, SPED e enquadramento no Simples Nacional, Lucro Presumido ou Real.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-people"></i></div><h5>Departamento Pessoal</h5><p>Folha de pagamento, eSocial, admissões, férias, rescisões e todas as rotinas trabalhistas e previdenciárias.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-graph-up-arrow"></i></div><h5>Planejamento Tributário</h5><p>Análise estratégica para reduzir legalmente a carga de impostos e aumentar a lucratividade do seu negócio.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-lightbulb"></i></div><h5>Consultoria Empresarial</h5><p>Orientação contábil e financeira para apoiar decisões, investimentos e o crescimento sustentável da empresa.</p></div></div>
+    </div>
+  </div>
+</section>
 
-                </div>
-                <div class="col-lg-6">
-                    <div class="bg-light p-4 rounded-3 border shadow-sm">
-                        <h4 class="fw-bold mb-3 text-primary-custom"><i class="bi bi-people-fill me-2"></i> Quadro Societário</h4>
-                        <p class="text-muted small">Liderança comprometida com a ética e conformidade legal da sua empresa.</p>
-                        <hr>
-                        <div class="d-flex align-items-start mb-3">
-                            <i class="bi bi-person-badge fs-3 text-accent me-3"></i>
-                            <div>
-                                <h6 class="fw-bold mb-0">Francisco Giovanni Mariano Martins</h6>
-                                <small class="text-muted">Sócio</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-start">
-                            <i class="bi bi-person-badge-fill fs-3 text-accent me-3"></i>
-                            <div>
-                                <h6 class="fw-bold mb-0">Iramar Carlos Monte</h6>
-                                <small class="text-muted">Sócio-Administrador</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- FRASE -->
+<section class="frase text-center">
+  <div class="container">
+    <i class="bi bi-quote"></i>
+    <blockquote class="mb-3">"Uma empresa organizada hoje é uma empresa preparada para crescer amanhã."</blockquote>
+    <p class="text-warning mb-0 fw-semibold">— Conmax Contabilidade</p>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="section">
+  <div class="container">
+    <div class="titulo text-center mb-5">
+      <small>Passo a passo</small>
+      <h2>Como Trabalhamos</h2>
+      <div class="linha"></div>
+    </div>
+    <div class="row text-center g-4">
+      <div class="col-md-3 etapa"><div class="num">1</div><h6 class="fw-bold">Contato</h6><p class="small">Você fala com a gente por telefone, WhatsApp ou e-mail.</p></div>
+      <div class="col-md-3 etapa"><div class="num">2</div><h6 class="fw-bold">Diagnóstico</h6><p class="small">Analisamos a situação e as necessidades da sua empresa.</p></div>
+      <div class="col-md-3 etapa"><div class="num">3</div><h6 class="fw-bold">Proposta</h6><p class="small">Apresentamos uma solução sob medida e transparente.</p></div>
+      <div class="col-md-3 etapa"><div class="num">4</div><h6 class="fw-bold">Acompanhamento</h6><p class="small">Cuidamos da rotina contábil com suporte contínuo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SÓCIOS -->
+<section class="section bg-cinza" id="socios">
+  <div class="container">
+    <div class="titulo text-center mb-5">
+      <small>Nossa liderança</small>
+      <h2>Quadro de Sócios</h2>
+      <div class="linha"></div>
+    </div>
+    <div class="row justify-content-center g-4">
+      <div class="col-md-5">
+        <div class="socio">
+          <div class="avatar">FG</div>
+          <h5 class="fw-bold" style="color:var(--azul)">Francisco Giovanni Mariano Martins</h5>
+          <p class="text-muted mb-0"><i class="bi bi-person-badge"></i> Sócio</p>
         </div>
-    </section>
-
-    <!-- Serviços -->
-    <section id="servicos" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h6 class="text-accent fw-bold text-uppercase">Atuação</h6>
-                <h2 class="fw-bold">Nossos Serviços Contábeis</h2>
-                <p class="text-muted">Oferecemos suporte completo de acordo com o CNAE 69.20-6-01</p>
-            </div>
-
-            <div class="row g-4">
-                <!-- Serviço 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-service h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-journal-check"></i>
-                        </div>
-                        <h5 class="fw-bold">Gestão Contábil</h5>
-                        <p class="text-muted small">Elaboração de balanços, balancetes, livros diários e demonstrações financeiras completas para auxílio na tomada de decisões.</p>
-                    </div>
-                </div>
-                <!-- Serviço 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-service h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-file-earmark-spreadsheet"></i>
-                        </div>
-                        <h5 class="fw-bold">Planejamento Fiscal</h5>
-                        <p class="text-muted small">Apuração de impostos do Simples Nacional, entrega de obrigações acessórias e otimização da carga tributária legal.</p>
-                    </div>
-                </div>
-                <!-- Serviço 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-service h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-people"></i>
-                        </div>
-                        <h5 class="fw-bold">Folha de Pagamento</h5>
-                        <p class="text-muted small">Gestão de pessoal, emissão de holerites, eSocial, cálculo de férias, rescisões e obrigações trabalhistas.</p>
-                    </div>
-                </div>
-                <!-- Serviço 4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-service h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-building-add"></i>
-                        </div>
-                        <h5 class="fw-bold">Abertura e Alteração de Empresas</h5>
-                        <p class="text-muted small">Processos de constituição de Sociedades Simples e Limitadas, alterações contratuais e regularizações junta aos órgãos públicos.</p>
-                    </div>
-                </div>
-                <!-- Serviço 5 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-service h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-file-earmark-lock"></i>
-                        </div>
-                        <h5 class="fw-bold">Certidões e Regularidade</h5>
-                        <p class="text-muted small">Emissão de certidões negativas de débitos, parcelamento de dívidas fiscais e acompanhamento cadastral municipal, estadual e federal.</p>
-                    </div>
-                </div>
-                <!-- Serviço 6 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-service h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-briefcase"></i>
-                        </div>
-                        <h5 class="fw-bold">Consultoria para EPP</h5>
-                        <p class="text-muted small">Orientação personalizada voltada para Empresas de Pequeno Porte no atingimento de metas operacionais e sustentabilidade financeira.</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-5">
+        <div class="socio">
+          <div class="avatar">IC</div>
+          <h5 class="fw-bold" style="color:var(--azul)">Iramar Carlos Monte</h5>
+          <p class="text-muted mb-0"><i class="bi bi-person-badge-fill"></i> Sócio-Administrador</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Dados Institucionais / Transparência -->
-    <section id="transparencia" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h6 class="text-accent fw-bold text-uppercase">Dados Jurídicos</h6>
-                <h2 class="fw-bold">Transparência Cadastral</h2>
-            </div>
-            
-            <div class="row g-3">
-                <div class="col-md-3 col-6">
-                    <div class="p-3 border rounded text-center bg-light">
-                        <small class="text-muted d-block">CNPJ</small>
-                        <strong class="text-dark">08.217.677/0001-98</strong>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="p-3 border rounded text-center bg-light">
-                        <small class="text-muted d-block">Razão Social</small>
-                        <strong class="text-dark">Conmax Contabilidade Empresarial S/S LTDA</strong>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="p-3 border rounded text-center bg-light">
-                        <small class="text-muted d-block">Regime Tributário</small>
-                        <strong class="text-dark">Optante pelo Simples Nacional</strong>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="p-3 border rounded text-center bg-light">
-                        <small class="text-muted d-block">Situação Cadastral</small>
-                        <strong class="text-success"><i class="bi bi-check-circle-fill"></i> Ativa</strong>
-                    </div>
-                </div>
-            </div>
+<!-- DADOS CADASTRAIS -->
+<section class="section" id="dados">
+  <div class="container">
+    <div class="titulo text-center mb-5">
+      <small>Transparência</small>
+      <h2>Informações de Registro</h2>
+      <div class="linha"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+          <h5 class="mb-3" style="color:var(--azul)"><i class="bi bi-file-earmark-text me-2" style="color:var(--dourado)"></i>Dados da Empresa</h5>
+          <table class="table tabela-dados mb-0">
+            <tr><th>CNPJ</th><td>08.217.677/0001-98</td></tr>
+            <tr><th>Razão Social</th><td>Conmax Contabilidade Empresarial S/S LTDA</td></tr>
+            <tr><th>Nome Fantasia</th><td>Conmax Contabilidade</td></tr>
+            <tr><th>Data de Abertura</th><td>11/08/2006</td></tr>
+            <tr><th>Natureza Jurídica</th><td>Sociedade Simples Limitada</td></tr>
+            <tr><th>Tipo</th><td>Matriz</td></tr>
+            <tr><th>Situação</th><td><span class="selo"><i class="bi bi-check-circle-fill"></i> Ativa</span></td></tr>
+          </table>
         </div>
-    </section>
-
-    <!-- Contato e Localização -->
-    <section id="contato" class="py-5 bg-light">
-        <div class="container">
-            <div class="row g-4">
-                <!-- Informações de Contato -->
-                <div class="col-lg-6">
-                    <h6 class="text-accent fw-bold text-uppercase">Canais de Atendimento</h6>
-                    <h2 class="fw-bold mb-4">Entre em Contato</h2>
-                    
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="bg-primary-custom text-white rounded-circle p-3 me-3">
-                            <i class="bi bi-geo-alt-fill fs-5"></i>
-                        </div>
-                        <div>
-                            <h6 class="fw-bold mb-0">Endereço</h6>
-                            <p class="text-muted mb-0">Rua Monsenhor Bruno, 1153 - Conjunto 610<br>Aldeota, Fortaleza - CE, CEP 60115-191</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="bg-primary-custom text-white rounded-circle p-3 me-3">
-                            <i class="bi bi-telephone-fill fs-5"></i>
-                        </div>
-                        <div>
-                            <h6 class="fw-bold mb-0">Telefones</h6>
-                            <p class="text-muted mb-0">
-                                <a href="tel:8533888000" class="text-decoration-none text-muted">(85) 3388-8000</a> | 
-                                <a href="tel:8533888001" class="text-decoration-none text-muted">(85) 3388-8001</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center mb-3">
-                        <div class="bg-primary-custom text-white rounded-circle p-3 me-3">
-                            <i class="bi bi-whatsapp fs-5"></i>
-                        </div>
-                        <div>
-                            <h6 class="fw-bold mb-0">WhatsApp</h6>
-                            <p class="text-muted mb-0">
-                                <a href="https://wa.me/5585999851217" target="_blank" class="text-decoration-none text-muted">(85) 99985-1217</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex align-items-center mb-4">
-                        <div class="bg-primary-custom text-white rounded-circle p-3 me-3">
-                            <i class="bi bi-envelope-fill fs-5"></i>
-                        </div>
-                        <div>
-                            <h6 class="fw-bold mb-0">E-mail</h6>
-                            <p class="text-muted mb-0">
-                                <a href="mailto:josevenancio@tmaenergiasolar.com" class="text-decoration-none text-muted">josevenancio@tmaenergiasolar.com</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <a href="https://maps.google.com/?q=Rua+Monsenhor+Bruno+1153+Aldeota+Fortaleza+CE" target="_blank" class="btn btn-outline-primary">
-                        <i class="bi bi-map-fill me-1"></i> Abrir no Google Maps
-                    </a>
-                </div>
-
-                <!-- Mapa Incorporado -->
-                <div class="col-lg-6">
-                    <div class="rounded shadow-sm overflow-hidden h-100" style="min-height: 300px;">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.353389025066!2d-38.5133614!3d-3.7330752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c748f2b7407a1b%3A0xc3453a9926b2aa8c!2sRua%20Monsenhor%20Bruno%2C%201153%20-%20Aldeota%2C%20Fortaleza%20-%20CE%2C%2060115-191!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
+          <h5 class="mb-3" style="color:var(--azul)"><i class="bi bi-shield-check me-2" style="color:var(--dourado)"></i>Registro e Enquadramento</h5>
+          <table class="table tabela-dados mb-0">
+            <tr><th>CRC</th><td>CE-000643/O</td></tr>
+            <tr><th>Porte</th><td>Empresa de Pequeno Porte</td></tr>
+            <tr><th>Optante pelo Simples</th><td>Sim (desde 01/01/2009)</td></tr>
+            <tr><th>Optante pelo MEI</th><td>Não</td></tr>
+            <tr><th>Capital Social</th><td>R$ 20.000,00</td></tr>
+            <tr><th>CNAE Principal</th><td>69.20-6-01 – Atividades de contabilidade</td></tr>
+            <tr><th>Situação Cadastral desde</th><td>11/08/2006</td></tr>
+          </table>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="bg-primary-custom text-white py-4 border-top border-secondary">
-        <div class="container text-center text-md-between d-md-flex align-items-center">
-            <p class="mb-2 mb-md-0 small">
-                &copy; Conmax Contabilidade Empresarial S/S LTDA - CNPJ: 08.217.677/0001-98. Todos os direitos reservados.
-            </p>
-            <p class="mb-0 small text-light opacity-75">
-                Aldeota - Fortaleza/CE
-            </p>
-        </div>
-    </footer>
+<!-- FAQ -->
+<section class="section bg-cinza" id="faq">
+  <div class="container" style="max-width:850px">
+    <div class="titulo text-center mb-5">
+      <small>Tire suas dúvidas</small>
+      <h2>Perguntas Frequentes</h2>
+      <div class="linha"></div>
+    </div>
+    <div class="accordion" id="acc">
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">Vocês fazem abertura de empresa?</button></h2>
+        <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#acc"><div class="accordion-body">Sim. Cuidamos de todo o processo de abertura, do registro à obtenção das inscrições e licenças necessárias.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">Posso trocar de contador a qualquer momento?</button></h2>
+        <div id="f2" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">Sim. Fazemos a transição com o escritório anterior de forma organizada, sem prejudicar a rotina da sua empresa.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">Qual o melhor regime tributário para minha empresa?</button></h2>
+        <div id="f3" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">Depende do faturamento, da atividade e da folha de pagamento. Fazemos um estudo para indicar a opção mais econômica.</div></div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4">Como faço para pedir uma proposta?</button></h2>
+        <div id="f4" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">É só falar com a gente pelo WhatsApp (85) 99985-1217, pelos telefones fixos ou pelo formulário abaixo.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- CONTATO -->
+<section class="section" id="contato">
+  <div class="container">
+    <div class="titulo text-center mb-5">
+      <small>Fale conosco</small>
+      <h2>Entre em Contato</h2>
+      <div class="linha"></div>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-5 info-contato">
+        <div class="d-flex mb-4"><i class="bi bi-geo-alt-fill me-3"></i><div><h6 class="fw-bold mb-1">Endereço</h6>Rua Monsenhor Bruno, 1153 – Conjunto 610<br>Aldeota – Fortaleza/CE<br>CEP 60115-191</div></div>
+        <div class="d-flex mb-4"><i class="bi bi-telephone-fill me-3"></i><div><h6 class="fw-bold mb-1">Telefones</h6><a href="tel:+558533888000">(85) 3388-8000</a><br><a href="tel:+558533888001">(85) 3388-8001</a></div></div>
+        <div class="d-flex mb-4"><i class="bi bi-whatsapp me-3"></i><div><h6 class="fw-bold mb-1">WhatsApp</h6><a href="[wa.me](https://wa.me/5585999851217)" target="_blank">(85) 99985-1217</a></div></div>
+        <div class="d-flex mb-4"><i class="bi bi-envelope-fill me-3"></i><div><h6 class="fw-bold mb-1">E-mail</h6><a href="mailto:josevenancio@tmaenergiasolar.com">josevenancio@tmaenergiasolar.com</a></div></div>
+        <div class="d-flex mb-4"><i class="bi bi-clock-fill me-3"></i><div><h6 class="fw-bold mb-1">Horário</h6>Segunda a sexta, das 8h às 18h</div></div>
+      </div>
+      <div class="col-lg-7">
+        <form class="card border-0 shadow-sm rounded-4 p-4" onsubmit="enviarWhats(event)">
+          <div class="row g-3">
+            <div class="col-md-6"><input type="text" id="nome" class="form-control form-control-lg" placeholder="Seu nome" required></div>
+            <div class="col-md-6"><input type="tel" id="tel" class="form-control form-control-lg" placeholder="Telefone" required></div>
+            <div class="col-12"><select id="assunto" class="form-select form-select-lg">
+              <option>Abertura de empresa</option><option>Trocar de contador</option>
+              <option>Departamento pessoal</option><option>Planejamento tributário</option><option>Outro assunto</option>
+            </select></div>
+            <div class="col-12"><textarea id="msg" class="form-control form-control-lg" rows="4" placeholder="Sua mensagem"></textarea></div>
+            <div class="col-12"><button class="btn btn-dourado btn-lg w-100"><i class="bi bi-send-fill"></i> Enviar pelo WhatsApp</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<div class="ratio" style="--bs-aspect-ratio:30%;min-height:320px;">
+  <iframe src="[google.com](https://www.google.com/maps?q=Rua+Monsenhor+Bruno,+1153,+Aldeota,+Fortaleza+-+CE,+60115-191&output=embed)"
+    style="border:0;" allowfullscreen loading="lazy" title="Localização Conmax Contabilidade"></iframe>
+</div>
+
+<!-- FOOTER -->
+<footer class="pt-5 pb-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <h5 class="fw-bold"><i class="bi bi-bar-chart-line-fill text-warning"></i> Conmax Contabilidade</h5>
+        <p class="small">Conmax Contabilidade Empresarial S/S LTDA<br>CNPJ 08.217.677/0001-98<br>CRC CE-000643/O</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h5>Links</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#sobre">Sobre</a></li><li><a href="#servicos">Serviços</a></li>
+          <li><a href="#socios">Sócios</a></li><li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h5>Serviços</h5>
+        <ul class="list-unstyled small">
+          <li>Abertura de Empresas</li><li>Contabilidade</li><li>Fiscal e Tributário</li><li>Departamento Pessoal</li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h5>Contato</h5>
+        <p class="small mb-1"><i class="bi bi-telephone"></i> (85) 3388-8000</p>
+        <p class="small mb-1"><i class="bi bi-whatsapp"></i> (85) 99985-1217</p>
+        <p class="small"><i class="bi bi-geo-alt"></i> Aldeota – Fortaleza/CE</p>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <p class="text-center small mb-0">© <span id="ano"></span> Conmax Contabilidade. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="[wa.me](https://wa.me/5585999851217?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20Conmax%20Contabilidade)" class="whatsapp" target="_blank" title="Fale no WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
+
+<script src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js)"></script>
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  function enviarWhats(e){
+    e.preventDefault();
+    const texto = `Olá! Meu nome é ${nome.value}.%0ATelefone: ${tel.value}%0AAssunto: ${assunto.value}%0AMensagem: ${msg.value}`;
+    window.open(`[wa.me](https://wa.me/5585999851217?text=${texto})`, '_blank');
+  }
+</script>
 </body>
 </html>
